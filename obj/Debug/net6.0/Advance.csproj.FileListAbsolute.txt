@@ -1,0 +1,17 @@
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\bin\Debug\net6.0\Advance.exe
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\bin\Debug\net6.0\Advance.deps.json
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\bin\Debug\net6.0\Advance.runtimeconfig.json
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\bin\Debug\net6.0\Advance.dll
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\bin\Debug\net6.0\Advance.pdb
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.csproj.AssemblyReference.cache
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.AssemblyInfoInputs.cache
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.AssemblyInfo.cs
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.csproj.CoreCompileInputs.cache
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.dll
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\refint\Advance.dll
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.pdb
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.genruntimeconfig.cache
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\ref\Advance.dll
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.Properties.Resources.resources
+C:\Users\Louis\OneDrive\Sem1-23\CAB201 Programming Principles\Assessment2\Advance\Advance\obj\Debug\net6.0\Advance.csproj.GenerateResource.cache

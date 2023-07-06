@@ -1,0 +1,86 @@
+Advance Game Bot
+----------------
+
+This short report describes the design of the Advance Game Bot software. The bot was developed 
+using the C# language as a .NET Core 6.0 console application. The application reads a board state 
+from a text file, selects and performs a legal move using game logic, and writes the updated board
+state to a file. The implementation of the application followed object-oriented design principles.
+
+The application uses classes to define different Advance piece types. An abstract class called 'Piece' is 
+defined, containing properties common to all pieces. All piece types inherit their attributes from the 
+Piece Class. Within the Piece Class, properties are used to hold information about a particular 
+instantiation of a piece within a given board state, including its current position, the piece's icon 
+(char code), as well as lists to hold board locations that a particular piece can move to or where 
+possible captures are. Within the Piece Class, a method called 'MovesSelect' is defined for finding 
+possible moves. Each child piece class implements its own version of the Move method based on the 
+move rules for each piece.
+
+The other class defined within the application, apart from the Program Class, is called 'AdvanceBot'. 
+This class is the core component of the Advance bot application. It is where the current board state is 
+evaluated, considering all the pieces involved and their possible moves. The algorithm within this 
+class attempts to make the best legal move in favour of the team playing the turn by assigning priority 
+levels to each friendly piece and performing a series of comparisons to eliminate moves that place a 
+piece in danger, especially when the General is involved.
+
+The Main method:
+
+The program accepts string command-line arguments containing the read-from and write-to files and the 
+colour of the team that is playing the turn. Three arguments are expected, so the program first checks 
+if the correct number of arguments has been provided. If the incorrect number of arguments has been 
+provided, the program exits; otherwise, it continues. Next, the program checks if the file path provided 
+exists. If not, an error message is displayed, and the program exits. If the file exists, the program 
+then proceeds to check the first argument, which indicates the team colour. Once it knows the team colour, 
+it allocates the right set of characters to an array to hold the friendly piece characters. For the 
+write-to file, if the file path does not exist, a new file path is created.
+
+The Program's Main method instantiates an AdvanceBot object, which represents a turn in the game. 
+It contains information about the team colour playing the turn and also implements a method called 
+'ExecuteMove,' which updates the board state by making a single move. The method returns the updated 
+board state, which is then written to the file character by character.
+
+AdvanceBot Class:
+
+Besides the ExecuteMove method, AdvanceBot also implements another method to generate a board state 
+representation from the provided text file. The method, called 'GenBoardRep,' accepts the board state 
+as a single string array. The method initializes a 9x9 char 2D array and then reads the string array 
+in order, assigning the characters one by one to the array. The 2D array representation of the board 
+state is used for all subsequent operations within ExecuteMove by indexing the char array.
+
+The generated board state is inspected character by character. If the characters are alphabetical characters,
+ representing one of the piece icons, an object pertaining to that piece icon is instantiated. The object is 
+initially given its current position on the board as well as its corresponding 'code' (icon). Also, depending 
+on whether a letter is lowercase or uppercase, the object is stored in either of two object lists: friendly 
+pieces or enemy pieces, so that the program can distinguish between friendly or enemy pieces currently on 
+the board.
+
+The game pieces:
+
+When an object of a piece is instantiated, the piece's MovesSelect method is also called. Each piece object 
+determines its selection of moves by first considering all the rule book moves available based on its 
+current position on the board. From this first selection, it inspects each location for available squares 
+or potential capture moves, ignoring all other locations. Capture moves are given priority over non-capture 
+moves.
+
+Selecting the best move algorithm:
+
+Within ExecuteMove, the lists of both friendly and enemy piece objects are inspected, and their move 
+selections are compared to see if a friendly piece move coincides with an enemy piece move. If the 
+locations are found to match, the move is removed from that piece's moves list. The friendly team's 
+General is given special attention in the best move selection process. If the General is found to be 
+under threat, then the program selects the best move to remove the General out of danger. Only if the 
+General is not in danger, will the program consider the other friendly pieces.
+
+Each piece class has a property called 'killScore.' When a piece is found to have a capture move, 'killScore' 
+is assigned the value of the piece to be captured. killScore serves as a sort of priority level designator 
+for selecting a move. If a piece does not have any capture moves but is under threat of being captured, that 
+piece's value is then used for assigning its priority level. Pieces that are not threatened or have no capture 
+moves are given the lowest priority level. The friendly pieces are then sorted based on priority, and the first 
+piece in the list that has available moves is selected to update the board state.
+
+The Piece class also implements two other methods (marked as non-abstract) that are used to find out if a piece 
+is protected by a friendly Sentinel (SentinelProtect) and another for checking if a piece has a friendly Builder 
+(BuilderFriend) by its side. The output of this is used to determine if a piece is safe when it is threatened 
+or to see if it can be saved by a friendly Builder.
+
+In summary, the Advance Game Bot application utilises object-oriented design principles and incorporates algorithms 
+to evaluate the board state and make intelligent move selections based on priority levels.
